@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'e923a6812ee8c961084b3b852bdfdc7f3c3ba91f',
+        'reference' => NULL,
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -422,12 +422,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'e923a6812ee8c961084b3b852bdfdc7f3c3ba91f',
+            'reference' => NULL,
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -467,12 +467,12 @@
             'dev_requirement' => false,
         ),
         'lcobucci/jwt' => array(
-            'pretty_version' => '3.3.3',
-            'version' => '3.3.3.0',
+            'pretty_version' => '3.2.5',
+            'version' => '3.2.5.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../lcobucci/jwt',
             'aliases' => array(),
-            'reference' => 'c1123697f6a2ec29162b82f170dd4a491f524773',
+            'reference' => '82be04b4753f8b7693b62852b7eab30f97524f9b',
             'dev_requirement' => false,
         ),
         'league/commonmark' => array(
@@ -728,12 +728,12 @@
             'dev_requirement' => true,
         ),
         'psr/cache' => array(
-            'pretty_version' => '1.0.1',
-            'version' => '1.0.1.0',
+            'pretty_version' => '3.0.0',
+            'version' => '3.0.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../psr/cache',
             'aliases' => array(),
-            'reference' => 'd11b50ad223250cf17b86e38383413f5a6764bf8',
+            'reference' => 'aa5030cfa5405eccfdcb1083ce040c2cb8d253bf',
             'dev_requirement' => false,
         ),
         'psr/container' => array(
@@ -812,12 +812,12 @@
             ),
         ),
         'psr/log' => array(
-            'pretty_version' => '1.1.4',
-            'version' => '1.1.4.0',
+            'pretty_version' => '2.0.0',
+            'version' => '2.0.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../psr/log',
             'aliases' => array(),
-            'reference' => 'd49695b909c3b7628b6289db5479a1c204601f11',
+            'reference' => 'ef29f6d262798707a9edd554e2b82517ef3a9376',
             'dev_requirement' => false,
         ),
         'psr/log-implementation' => array(
@@ -1347,12 +1347,14 @@
             'dev_requirement' => false,
         ),
         'tymon/jwt-auth' => array(
-            'pretty_version' => '1.0.2',
-            'version' => '1.0.2.0',
+            'pretty_version' => 'dev-develop',
+            'version' => 'dev-develop',
             'type' => 'library',
             'install_path' => __DIR__ . '/../tymon/jwt-auth',
-            'aliases' => array(),
-            'reference' => 'e588cb719539366c0e2f6017f975379cb73e9680',
+            'aliases' => array(
+                0 => '1.0.x-dev',
+            ),
+            'reference' => 'ab00f2d7cce5f043067aef7849cdc792de2df635',
             'dev_requirement' => false,
         ),
         'vlucas/phpdotenv' => array(

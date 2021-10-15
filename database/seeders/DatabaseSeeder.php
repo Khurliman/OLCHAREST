@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
     //  $this->call(RelatedProductSeeder::class);
     //  $this->call(CategoryForComputerSeeder::class);
     // $this->call(ComputerMonofakturaSeeder::class);
-    //  $this->call(FeedbackSeeder::class);
+      $this->call(FeedbackSeeder::class);
     //  $this->call(AskCallSeeder::class);
     //     $this->call(EmailFeedbackSeeder::class);
         $this->call(ComputerImage::class);
