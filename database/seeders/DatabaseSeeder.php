@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
     {
     //  $this->call(BookSeeder::class);
     //  $this->call(UserSeeder::class);
-    // $this->call(ProgramSeeder::class);
+     $this->call(ProgramSeeder::class);
     //  $this->call(ProductForComputerSeeder::class);
      // $this->call(ComputerSeeder::class);
     //  $this->call(ComputerForSaleSeeder::class);
