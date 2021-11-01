@@ -47,7 +47,7 @@ class ProgramController extends BaseApiController
         // return $this->responseWithData(ProgramResource::collection($model));
         return response()->json(['Program' => ProgramResource::collection($model)]);
     }
-
+7
 
 /**
      * @OA\Get(path="/api/v1/Programs/{id}",

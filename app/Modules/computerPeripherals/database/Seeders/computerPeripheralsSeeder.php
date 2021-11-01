@@ -15,6 +15,6 @@ class computerPeripheralsSeeder extends Seeder
      */
     public function run()
     {
-        computerPeripherals::factory(25)->create();
+        computerPeripherals::factory(12)->create();
     }
 }
