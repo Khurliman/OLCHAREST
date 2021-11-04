@@ -44,9 +44,18 @@ class ProgramController extends BaseApiController
 
 
     public function index(){
+<<<<<<< HEAD
         $model = Program::with('childrenCategories.childrenCategories')->whereNull('parent_id')->get();
         //return $model;
         return response()->json(['Program' => ProgramResource::collection($model)]);
+=======
+    //     $model = $this->programReadRepository->getProgram();
+    //   return $model;
+  
+    $model = Program::with('childrenCategories.childrenCategories')->whereNull('parent_id')->get();
+    return response()->json(['Program' => ProgramResource::collection($model)]);
+     // return   ProgramResource::collection($model);
+>>>>>>> fcb38a3438d91df39bc5636b2acd70e7bdb2cc97
     }
 
 
