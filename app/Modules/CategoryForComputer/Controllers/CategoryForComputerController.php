@@ -132,6 +132,7 @@ class CategoryForComputerController extends BaseApiController
 
     public function ByAlias(string $slug, Request $request){
        
+<<<<<<< HEAD
     //     $model = $this->categoryForComputerRead->ByAlias($slug);
     //    return new CategoryForComputerProductResource($model);
      $alias = DB::table('category_for_computer')
@@ -153,10 +154,15 @@ class CategoryForComputerController extends BaseApiController
             
                   
                   $perPage = 24;
+=======
+        $model = $this->categoryForComputerRead->ByAlias($slug);
+       //return new CategoryForComputerProductResource($model);
+                  $perPage = 10;
+>>>>>>> 4580bea845821618c0c02b8b8b6479e6ea45d3cd
                   $page = $request->input('page', 1);
-                  $total = $query->count();
+                  $total = $model->count();
                   $path = $request->url();
-                 $results = $query->skip(($page - 1) * $perPage)->take($perPage);
+                 $results = $model->skip(($page - 1) * $perPage)->take($perPage);
         
         return ['Components' => $results,
                  'Paginator' => 
@@ -172,13 +178,7 @@ class CategoryForComputerController extends BaseApiController
     }
 
     
-    public function paginate($items, $perPage = 5, $page = null, $options = [])
-    {
-        // $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
-        // $items = $items instanceof Collection ? $items : Collection::make($items);
-        return new LengthAwarePaginator($items->forPage($page, $perPage), $items->count(), $perPage, $page, $options);
-    }
-    
+
 
 
     public function byAliasProduct($slug, $product_slug){
