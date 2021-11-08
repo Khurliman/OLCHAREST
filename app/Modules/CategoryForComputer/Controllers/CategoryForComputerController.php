@@ -152,7 +152,7 @@ class CategoryForComputerController extends BaseApiController
 
             
                   
-                  $perPage = 10;
+                  $perPage = 24;
                   $page = $request->input('page', 1);
                   $total = $query->count();
                   $path = $request->url();
