@@ -37,6 +37,6 @@ class ComputerReedRepository implements ComputerReedRepositoryInterface
         {
             $query->where('program_id', '=', $id);
         }
-    )->with(['product.product.product.category', 'program.program',  'ComputerImages'])->get();
+    )->with(['product.product.product.category', 'program',  'ComputerImages'])->get();
     }
 }
