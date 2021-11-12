@@ -132,43 +132,37 @@ class CategoryForComputerController extends BaseApiController
 
     public function ByAlias(string $slug, Request $request){
        
-    //     $model = $this->categoryForComputerRead->ByAlias($slug);
-    //    return new CategoryForComputerProductResource($model);
-     $alias = DB::table('category_for_computer')
-      ->leftJoin('categories','categories.id','=','category_for_computer.category_id')
-      ->select('category_for_computer.category_id','categories.id','categories.alias')->where('categories.alias', 'LIKE', "{$slug}")
-      ->get();
-
-      foreach ($alias as  $value) {
+    $model = $this->categoryForComputerRead->ByAlias($slug);
     
-      }
-
-    $query =  DB::table('product_for_computer')
-  ->Join('products',function($join) use($value){
-                      $join->on('products.id','=','product_for_computer.product_id')
-                          ->where('product_for_computer.cat_id',"{$value->id}");
-                  })->select('products.name_uz','products.name_oz','products.name_ru','products.description_uz','products.description_oz','products.description_ru','products.alias','products.images','products.price','products.quantity','products.category_id')
-                  ->get();
-
+    foreach ($model as $key ) {
+         
+    }
+  $category =   DB::table('categories')
+->where('categories.id',"{$key->category_id}")
+->select('categories.id','categories.name_ru', 'categories.name_uz', 'categories.name_oz', 'categories.name_ru', 'categories.alias', 'categories.icon',)
+->get();
+foreach ($category as $category_key ) {
+ // dd($key);
+}
+   
             
                   
                   $perPage = 24;
                   $page = $request->input('page', 1);
-                  $total = $query->count();
+                  $total = $model->count();
                   $path = $request->url();
-                 $results = $query->skip(($page - 1) * $perPage)->take($perPage);
+                 $results = $model->skip(($page - 1) * $perPage)->take($perPage);
         
-        return ['Components' => $results,
-                 'Paginator' => 
-                  [
-                     'Total' => $total,
-                     'Current page' => $page,
-                     'PerPage' => $perPage,
-                     'path'  => $path,
-                      'last_page' => ceil($total / $perPage)
-                     
-                     ]
-                    ];
+                 return ['Components' => $results, 
+                 'Category' => $category_key,
+         'Paginator' =>  [
+             'Total' => $total,
+             'Current page' => $page,
+             'PerPage' => $perPage,
+             'path'  => $path,
+             'last_page' => ceil($total / $perPage)
+               ]
+            ];
     }
 
     
